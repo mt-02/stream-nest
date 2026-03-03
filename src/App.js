@@ -1,7 +1,7 @@
 import Home from "./Home";
 import Watch from "./Watch";
 import './App.css';
-import {HashRouter,Route,Routes,Link} from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 
 function App() {
@@ -20,3 +20,4 @@ function App() {
 }
 
 export default App;
+

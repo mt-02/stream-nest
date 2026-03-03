@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { memo } from "react";
 import { isMobile } from "react-device-detect";
 import ReactStars from "react-stars";
+
 function MovieTagMobile({ id, name, enName, year, imbd, time, img }) {
   const handleChooseMovie = (id) => {
     localStorage.setItem("movieData", JSON.stringify({ idMovie: id, atWatch: 0 }));
@@ -22,18 +23,13 @@ function MovieTagMobile({ id, name, enName, year, imbd, time, img }) {
             className={
               "group-hover:brightness-50 border-2 border-transparent group-hover:border-blue-600 rounded-lg w-full h-3/4 drop-shadow-lg "
             }
-            // style={{ height: "20%" }}
             src={
               isMobile
                 ? "https://www.themoviedb.org/t/p/original" + img
                 : "https://www.themoviedb.org/t/p/w500" + img
             }
+            alt={name || enName || "Movie poster"}
           />
-          {/* <p className="text-white">
-          {
-            object.genre_ids.map((e)=><>{MovieTypes.find(x => x.key === e).name} </>)
-          }
-        </p> */}
           <div
             className="
         invisible
@@ -82,4 +78,3 @@ font-semibold
 }
 
 export default memo(MovieTagMobile);
-

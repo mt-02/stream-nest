@@ -24,7 +24,7 @@ function Home() {
     )
   );
   const [AdSearchedArray, changeAdSearched] = useState([]);
-  const [bannerMovies, changeBanner] = useState(() =>
+  const [bannerMovies] = useState(() =>
     MOVIES_DATA.sort(() => Math.random() - Math.random()).slice(0, 10)
   );
   const [isSearched, changeIsSearched] = useState("");
@@ -72,7 +72,7 @@ function Home() {
         changeIsSearched("");
       }
     }
-  }, []);
+  }, [isAdvanceSearch, maxLoadMovies]);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
@@ -85,7 +85,7 @@ function Home() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
   return (
     <div>
       <div>
@@ -232,5 +232,7 @@ function Home() {
 }
 
 export default Home;
+
+
 
 
